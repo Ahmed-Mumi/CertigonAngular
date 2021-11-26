@@ -1,0 +1,25 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="Id" [value]="service.formData.Id">
+    <!-- <input type="hidden" name="DepartmentId" [value]="service.formData.DepartmentId"> -->
+    <div class="form-group">
+        <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName" placeholder="Firstname"
+            class="form-control" required>
+    </div>
+    <div class="form-group">
+        <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" placeholder="LastName"
+            class="form-control" required>
+    </div>
+    <div class="form-group">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" name="IsActive" #IsActive="ngModel" [(ngModel)]="service.formData.IsActive"
+                class="custom-control-input">
+            <label class="custom-control-label" for="customCheck1">IsActive</label>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit">
+            Submit
+        </button>
+    </div>
+</form>

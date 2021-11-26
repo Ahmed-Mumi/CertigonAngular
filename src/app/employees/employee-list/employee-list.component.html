@@ -1,0 +1,21 @@
+<span style="display: inline;">
+    <button class="btn btn-success btn-lg " (click)="getAllActive(true)">
+        Get all active
+    </button>
+    <button class="btn btn-success btn-lg " (click)="getAllInactive(false)">
+        Get all inactive
+    </button> </span>
+<table class="table table-hover">
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>IsActive</th>
+    <th>DepartmentId</th>
+    <th></th>
+    <tr *ngFor="let employee of service.list">
+        <td (click)="populateForm(employee)">{{employee.firstName}}</td>
+        <td (click)="populateForm(employee)">{{employee.lastName}}</td>
+        <td (click)="populateForm(employee)">{{employee.isActive}}</td>
+        <td (click)="populateForm(employee)">{{employee.departmentId}}</td>
+        <td (click)="onDelete(employee.id)">Delete</td>
+    </tr>
+</table>
